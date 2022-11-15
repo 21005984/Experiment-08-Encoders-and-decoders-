@@ -55,42 +55,55 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+
 
 
 
 ### PROGRAM 
+### ENCODER
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: Meiyarasi.V
+RegisterNumber:  212221230058
 */
-
-
-
-
-
+```
+module enc(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input d0,d1,d2,d3,d4,d5,d6,d7;
+output a,b,c;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
 
 ### RTL LOGIC  
-
-
-
-
-
-
-
-
+![output](./d1.png)
 ### TIMING DIGRAMS  
-
-
-
-
-
+![output](./d2.png)
 ### TRUTH TABLE 
+![output](./d3.png)
 
-
-
-
-
+### DECODER
+```
+module enc(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule 
+```
+### RTL LOGIC  
+![output](./d4.png)
+### TIMING DIGRAMS  
+![output](./d5.png)
+### TRUTH TABLE 
+![output](./d6.png)
 
 ### RESULTS 
+Thus,the program to desing encoder and decoder is done.
